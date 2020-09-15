@@ -1,2 +1,5 @@
 homepage: "https://www.crossengage.io"
 documentation: "https://documentation.crossengage.io"
+versions:
+  - sha: c1976534f60cf3efcf38fc3a09f24d13723f4873
+    changeNotes: Initial release.
