@@ -120,7 +120,7 @@ const ceObject = copyFromWindow(objectName) || function() {
 setInWindow(objectName, ceObject, true);
 
 // SDK source script injection
-let sdkUrl = 'https://app.crossengage.io/ce.js';
+let sdkUrl = 'https://app.crossengage.io/xng/ce.js';
 if(data.customSdkUrl) {
   sdkUrl = data.customSdkUrl;
 }
@@ -266,7 +266,11 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://app-stg.xng.rocks/**/ce.js"
+                "string": "https://app.crossengage.io/"
+              },
+              {
+                "type": 1,
+                "string": "https://*.xng.rocks/"
               }
             ]
           }
