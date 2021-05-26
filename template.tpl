@@ -38,13 +38,6 @@ ___TEMPLATE_PARAMETERS___
   },
   {
     "type": "CHECKBOX",
-    "name": "trackingOptIn",
-    "checkboxText": "Force enable tracking",
-    "simpleValueType": true,
-    "help": "By default the tracking SDK is not sending any data to CrossEngage. Check this checkbox to force enable tracking.\nWARNING: This will enable tracking for all users, regardless what their previous setting was!"
-  },
-  {
-    "type": "CHECKBOX",
     "name": "autoPageView",
     "checkboxText": "Enable page view on load",
     "simpleValueType": true,
@@ -62,6 +55,13 @@ ___TEMPLATE_PARAMETERS___
         "checkboxText": "Disable errors and warnings",
         "simpleValueType": true,
         "help": "Will disable all custom logs from the SDK in the browsers developer console including errors and warnings.\nJavascript runtime errors will not be blocked."
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "forceEnablePolling",
+        "checkboxText": "Force notification polling",
+        "simpleValueType": true,
+        "help": "Enables the notification polling behavior, even if no notifications are currently enabled."
       },
       {
         "type": "CHECKBOX",
@@ -97,6 +97,13 @@ ___TEMPLATE_PARAMETERS___
         "name": "customSdkUrl",
         "displayName": "Custom CrossEngage Tracking SDK URL",
         "simpleValueType": true
+      },
+      {
+        "type": "CHECKBOX",
+        "name": "trackingOptIn",
+        "checkboxText": "Force enable tracking",
+        "simpleValueType": true,
+        "help": "By default the tracking SDK is not sending any data to CrossEngage. Check this checkbox to force enable tracking.\nWARNING: This will enable tracking for all users, regardless what their previous setting was!"
       }
     ]
   }
@@ -128,7 +135,8 @@ injectScript(sdkUrl, data.gtmOnSuccess, data.gtmOnFailure, 'ceSDK');
 
 const config = {
   apiKey: data.apiKey,
-  silentLogs: data.silentLogs
+  silentLogs: data.silentLogs,
+  forceEnablePolling: data.forceEnablePolling
 };
 
 // Advanced Options
@@ -292,6 +300,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 15.9.2020, 12:28:14
+Created on 26.5.2021, 12:30:27
 
 
