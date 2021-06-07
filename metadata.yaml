@@ -1,6 +1,8 @@
 homepage: "https://www.crossengage.io"
 documentation: "https://documentation.crossengage.io"
 versions:
+  - sha: b5ec56b22f0c0d6dcc80ee1e82ce9ce616169aed
+    changeNotes: Add configuration feature and rename template.
   - sha: 93f7948522778fe9fa0b2af0e4adababd882ed2d
     changeNotes: Add an option to enforce notification polling.
   - sha: e15d3b97f2a0a22f80461719e2df0677d432fc74
