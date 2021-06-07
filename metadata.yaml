@@ -1,6 +1,8 @@
 homepage: "https://www.crossengage.io"
 documentation: "https://documentation.crossengage.io"
 versions:
+  - sha: 02e57a3eaa15009e5b51cb9ba1592404c816046e
+    changeNotes: Add missing SDK error warning.
   - sha: b5ec56b22f0c0d6dcc80ee1e82ce9ce616169aed
     changeNotes: Add configuration feature and rename template.
   - sha: 93f7948522778fe9fa0b2af0e4adababd882ed2d
