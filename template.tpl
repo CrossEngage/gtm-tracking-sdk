@@ -180,6 +180,7 @@ ___SANDBOXED_JS_FOR_WEB_TEMPLATE___
 const copyFromWindow = require('copyFromWindow');
 const setInWindow = require('setInWindow');
 const injectScript = require('injectScript');
+const log = require('logToConsole');
 
 // Dictionary to transform strings into desired data format
 const transformDict = {
@@ -241,10 +242,16 @@ if (data.configurations) {
 }
 
 const ce = copyFromWindow('ce');
-ce(configuration);
 
-if (data.autoPageView) {
-  ce('track', 'Viewed Page');
+
+if (ce) {
+  ce(configuration);
+
+  if (data.autoPageView) {
+    ce('track', 'Viewed Page');
+  }
+} else {
+ log('Can not configure SDK: Global function object missing. Please set up the CrossEngage Tracking SDK Snippet first.');
 }
 
 
@@ -380,6 +387,24 @@ ___WEB_PERMISSIONS___
       "isEditedByUser": true
     },
     "isRequired": true
+  },
+  {
+    "instance": {
+      "key": {
+        "publicId": "logging",
+        "versionId": "1"
+      },
+      "param": [
+        {
+          "key": "environments",
+          "value": {
+            "type": 1,
+            "string": "debug"
+          }
+        }
+      ]
+    },
+    "isRequired": true
   }
 ]
 
@@ -391,6 +416,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 7.6.2021, 11:05:57
+Created on 7.6.2021, 11:26:50
 
 
