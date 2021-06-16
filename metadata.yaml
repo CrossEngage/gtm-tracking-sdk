@@ -1,6 +1,8 @@
 homepage: "https://www.crossengage.io"
 documentation: "https://documentation.crossengage.io"
 versions:
+  - sha: 6c8306145dab743a4ee5867e121a32ea8711df99
+    changeNotes: Add a fix to allow boolean SDK config input.
   - sha: 02e57a3eaa15009e5b51cb9ba1592404c816046e
     changeNotes: Add missing SDK error warning.
   - sha: b5ec56b22f0c0d6dcc80ee1e82ce9ce616169aed
