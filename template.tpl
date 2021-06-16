@@ -184,12 +184,16 @@ const log = require('logToConsole');
 
 // Dictionary to transform strings into desired data format
 const transformDict = {
-  'forceEnablePolling': value => value.toLowerCase() === 'true',
-  'trackingOptIn': value => value.toLowerCase() === 'true',
+  'forceEnablePolling': value => parseBool(value),
+  'trackingOptIn': value => parseBool(value),
   'globalEventProperties': value => value,
   'globalUserId': value => value,
   'sessionId': value => value,
 };
+
+function parseBool(value) {
+ return typeof value == 'boolean' ? value : value.toLowerCase() === 'true';
+}
 
 // functions
 
@@ -416,6 +420,6 @@ scenarios: []
 
 ___NOTES___
 
-Created on 7.6.2021, 11:26:50
+Created on 16.6.2021, 13:18:53
 
 
